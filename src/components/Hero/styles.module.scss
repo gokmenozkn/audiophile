@@ -1,0 +1,73 @@
+@import './../../sass/variables';
+
+$container-width: 1120px;
+
+.section {
+  background-color: $blackish;
+  background-image: url('./../../assets/home/desktop/image-hero.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  height: calc(100vh - (4em + 4rem - 0.3rem));
+
+  .container {
+    max-width: $container-width;
+    margin: 0 auto;
+
+    .main {
+      position: relative;
+      width: 40%;
+      // background-color: purple;
+      transform: translateY(12.8rem);
+
+      &__ad {
+        color: $white;
+        opacity: 0.5;
+        font-weight: normal;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        letter-spacing: 1rem;
+        text-transform: uppercase;
+        margin-bottom: 2.4rem;
+      }
+
+      &__title {
+        color: $white;
+        font-weight: bold;
+        font-size: 5.6rem;
+        line-height: 5.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 2.4rem;
+      }
+
+      &__content {
+        width: 80%;
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        color: #ffffff;
+        opacity: 0.75;
+        margin-bottom: 4rem;
+      }
+
+      &__btn {
+        display: inline-block;
+        text-decoration: none;
+        padding: 15px 31px;
+        border: 0;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $white;
+        background-color: $red;
+
+        &:hover {
+          background-color: $red-hover;
+        }
+      }
+    }
+  }
+}

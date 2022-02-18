@@ -1,0 +1,62 @@
+@import './../../sass/variables';
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  margin-top: 12rem;
+  margin-bottom: 16.8rem;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.card {
+  width: 350px;
+  height: 204px;
+  position: relative;
+  background-color: $gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: .8rem;
+
+  &__img {
+    position: absolute;
+    width: 12.295rem;
+    height: 16rem;
+    transform: translateY(-43.66%);
+  }
+
+  &__body {
+    text-align: center;
+    margin-top: calc(50% - (11.6rem - 1.5rem));
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    letter-spacing: 1.28571px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    // margin-top: 10rem;
+  }
+
+  &__link {
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: $black;
+    text-decoration: none;
+    opacity: 0.5;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}

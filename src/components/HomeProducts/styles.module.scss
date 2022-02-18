@@ -1,0 +1,210 @@
+@import './../../sass/variables';
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  margin-bottom: 20rem;
+
+  .cards {
+    margin-bottom: 20rem;
+    .zx9 {
+      background-image: url('./../../assets/home/desktop/pattern-circles.svg');
+      background-color: $red;
+      background-repeat: no-repeat;
+      background-position: left top;
+      height: 516px;
+      border-radius: 0.8rem;
+      margin-bottom: 4.8rem;
+      position: relative;
+
+      .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left {
+          width: 41.023rem;
+          height: 49.3rem;
+          margin-left: 11.75rem;
+          // margin-top: 9.6rem;
+          img {
+            width: 100%;
+          }
+        }
+        .right {
+          $width: 350px;
+          max-width: $width;
+          margin-right: 9.5rem;
+
+          &__title {
+            color: $white;
+            font-size: 5.6rem;
+            line-height: 5.8rem;
+            font-weight: bold;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            margin-bottom: 2.9rem;
+          }
+
+          &__content {
+            font-weight: 500;
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            color: $white;
+            opacity: 0.75;
+            margin-bottom: 4rem;
+          }
+
+          &__btn {
+            display: inline-block;
+            text-decoration: none;
+            color: $white;
+            background-color: $black;
+            padding: 1.5rem 3.1rem;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            &:hover {
+              background-color: #4c4c4c;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.zx7 {
+  height: 320px;
+  border-radius: 0.8rem;
+  padding: 0 9.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4.8rem;
+
+  .body {
+    // background-color: powderblue;
+    max-width: 20.4rem;
+
+    &__title {
+      font-weight: bold;
+      font-size: 2.8rem;
+      line-height: 3.8rem;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      margin-bottom: 3.2rem;
+    }
+
+    &__link {
+      display: inline-block;
+      color: $black;
+      font-size: 1.3rem;
+      line-height: 1.8rem;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 1.5rem 3.1rem;
+      border: 0.2rem solid black;
+
+      &:hover {
+        background-color: black;
+        color: $white;
+      }
+    }
+  }
+}
+
+.yx1 {
+  height: 32rem;
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+
+    .left {
+      width: calc(50% - 3rem);
+      border-radius: 0.8rem;
+    }
+    .right {
+      width: calc(50% - 3rem);
+      border-radius: 0.8rem;
+      background-color: $gray;
+      padding: 10.1rem 9.5rem;
+
+      &__title {
+        font-weight: bold;
+        font-size: 2.8rem;
+        line-height: 3.8rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        margin-bottom: 3.2rem;
+      }
+
+      &__link {
+        display: inline-block;
+        color: $black;
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 1.5rem 3.1rem;
+        border: 0.2rem solid black;
+
+        &:hover {
+          background-color: black;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.group20 {
+  height: 58.8rem;
+
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      width: 44.5rem;
+
+      .title {
+        font-weight: bold;
+        font-size: 4rem;
+        line-height: 4.4rem;
+        letter-spacing: 1.42857px;
+        text-transform: uppercase;
+        margin-bottom: 3.2rem;
+      }
+
+      .content {
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        opacity: 0.5;
+      }
+    }
+
+    .right {
+      height: 100%;
+      border-radius: 0.8rem;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.red {
+  color: $red;
+}
