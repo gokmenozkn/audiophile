@@ -49,7 +49,16 @@ function reducer(state, action) {
       if (found) {
         copy = state.cart.map((item) => {
           if (item.id === found.id) {
-            return { ...item, qty: item.qty > 1 ? item.qty-- : 1 };
+            if (item.qty > 1) {
+              console.log('DECREASE_BY_ONE and decreasing');
+              return {
+                ...item,
+                qty: item.qty - 1,
+              };
+            } else {
+              return { ...item, qty: 1 };
+            }
+            // return { ...item, qty: item.qty > 1 ? item.qty-- : 1 };
           } else {
             return item;
           }
