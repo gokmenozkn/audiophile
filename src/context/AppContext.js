@@ -31,6 +31,7 @@ function AppProvider({ children }) {
   }
 
   function decreaseByOne(item) {
+    console.log('decreaseByOne() works!!');
     dispatch({ type: 'DECREASE_BY_ONE', item });
   }
 
