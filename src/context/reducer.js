@@ -17,7 +17,6 @@ function reducer(state, action) {
           }
         });
       }
-      console.log('Updated cart:', state.cart);
       return {
         ...state,
         cart: copy,
@@ -26,11 +25,11 @@ function reducer(state, action) {
 
     case 'INCREASE_BY_ONE': {
       let found = state.cart.find((item) => item.id === action.item.id);
-      let copy = [action.item, ...state.cart];
+      let copy = [...state.cart];
 
       if (found) {
         copy = state.cart.map((item) => {
-          if (item.id === action.item.id) {
+          if (item.id === found.id) {
             return { ...item, qty: item.qty + 1 };
           } else {
             return item;
@@ -45,11 +44,11 @@ function reducer(state, action) {
 
     case 'DECREASE_BY_ONE': {
       let found = state.cart.find((item) => item.id === action.item.id);
-      let copy = [action.item, ...state.cart];
+      let copy = [...state.cart];
 
       if (found) {
         copy = state.cart.map((item) => {
-          if (item.id === action.item.id) {
+          if (item.id === found.id) {
             return { ...item, qty: item.qty > 1 ? item.qty-- : 1 };
           } else {
             return item;
