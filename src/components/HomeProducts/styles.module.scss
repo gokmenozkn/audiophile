@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import './../../sass/variables';
 
 .container {
@@ -5,10 +6,14 @@
   margin: 0 auto;
   margin-bottom: 20rem;
 
+  @media screen and (max-width: $tablet-bp) {
+    padding: 0 24px;
+    margin-bottom: 12rem;
+  }
+
   .cards {
-    margin-bottom: 20rem;
     .zx9 {
-      background-image: url('./../../assets/home/desktop/pattern-circles.svg');
+      background-image: url('../../assets/home/desktop/pattern-circles.svg');
       background-color: $red;
       background-repeat: no-repeat;
       background-position: left top;
@@ -17,16 +22,33 @@
       margin-bottom: 4.8rem;
       position: relative;
 
+      @media screen and (max-width: $tablet-bp) {
+        height: 600px;
+      }
+
       .flex {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
+        @media screen and (max-width: $tablet-bp) {
+          flex-direction: column;
+        }
+
         .left {
           width: 41.023rem;
           height: 49.3rem;
           margin-left: 11.75rem;
-          // margin-top: 9.6rem;
+
+          @media screen and (max-width: $tablet-bp) {
+            max-width: 172.25px;
+            width: 100%;
+            margin-top: 52px;
+            margin-bottom: 32px;
+            margin-left: 0;
+            height: auto;
+          }
+
           img {
             width: 100%;
           }
@@ -36,6 +58,13 @@
           max-width: $width;
           margin-right: 9.5rem;
 
+          @media screen and (max-width: $tablet-bp) {
+            width: 100%;
+            text-align: center;
+            padding: 0 24px;
+            margin-right: 0;
+          }
+
           &__title {
             color: $white;
             font-size: 5.6rem;
@@ -44,6 +73,11 @@
             letter-spacing: 0.2rem;
             text-transform: uppercase;
             margin-bottom: 2.9rem;
+
+            @media screen and (max-width: $tablet-bp) {
+              margin-bottom: 24px;
+              font-size: 36px;
+            }
           }
 
           &__content {
@@ -53,6 +87,10 @@
             color: $white;
             opacity: 0.75;
             margin-bottom: 4rem;
+
+            @media screen and (max-width: $tablet-bp) {
+              margin-bottom: 24px;
+            }
           }
 
           &__btn {
@@ -84,9 +122,17 @@
   align-items: center;
   margin-bottom: 4.8rem;
 
+  @media screen and (max-width: $tablet-bp) {
+    padding: 0 24px;
+  }
+
   .body {
-    // background-color: powderblue;
     max-width: 20.4rem;
+
+    @media screen and (max-width: $tablet-bp) {
+      max-width: 100%;
+      width: 100%;
+    }
 
     &__title {
       font-weight: bold;
@@ -120,86 +166,82 @@
 .yx1 {
   height: 32rem;
 
+  @media (max-width: $tablet-bp) {
+    height: auto;
+  }
+
   .flex {
     display: flex;
     justify-content: space-between;
     height: 100%;
 
-    .left {
-      width: calc(50% - 3rem);
-      border-radius: 0.8rem;
+    @media (max-width: $tablet-bp) {
+      flex-direction: column;
     }
-    .right {
-      width: calc(50% - 3rem);
-      border-radius: 0.8rem;
-      background-color: $gray;
-      padding: 10.1rem 9.5rem;
-
-      &__title {
-        font-weight: bold;
-        font-size: 2.8rem;
-        line-height: 3.8rem;
-        letter-spacing: 0.2rem;
-        text-transform: uppercase;
-        margin-bottom: 3.2rem;
-      }
-
-      &__link {
-        display: inline-block;
-        color: $black;
-        font-size: 1.3rem;
-        line-height: 1.8rem;
-        letter-spacing: 0.1rem;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 1.5rem 3.1rem;
-        border: 0.2rem solid black;
-
-        &:hover {
-          background-color: black;
-          color: $white;
-        }
-      }
-    }
-  }
-}
-
-.group20 {
-  height: 58.8rem;
-
-  .flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
     .left {
-      width: 44.5rem;
-
-      .title {
-        font-weight: bold;
-        font-size: 4rem;
-        line-height: 4.4rem;
-        letter-spacing: 1.42857px;
-        text-transform: uppercase;
-        margin-bottom: 3.2rem;
-      }
-
-      .content {
-        font-weight: 500;
-        font-size: 1.5rem;
-        line-height: 2.5rem;
-        opacity: 0.5;
-      }
-    }
-
-    .right {
-      height: 100%;
+      width: 54rem;
       border-radius: 0.8rem;
-      overflow: hidden;
 
-      img {
+      @media screen and (max-width: $tablet-bp) {
         width: 100%;
+        height: 200px;
+        margin-bottom: 24px;
+      }
+    }
+
+    .rightContainer {
+      display: flex;
+      align-items: center;
+      width: 54rem;
+      height: 100%;
+      background-color: $gray;
+      border-radius: 0.8rem;
+      padding: 0 9.5rem;
+      
+      @media (max-width: $tablet-bp) {
+        display: block;
+        width: 100%;
+        height: 200px;
+        padding: 0;
+      }
+      
+      .right {
+        @media (max-width: $tablet-bp) {
+          width: 100%;
+          padding: 0 24px;
+        }
+
+        &__title {
+          font-weight: bold;
+          font-size: 2.8rem;
+          line-height: 3.8rem;
+          letter-spacing: 0.2rem;
+          text-transform: uppercase;
+          margin-bottom: 3.2rem;
+
+          @media (max-width: $tablet-bp) {
+            margin-top: 41px;
+          }
+        }
+
+        &__link {
+          display: inline-block;
+          color: $black;
+          font-size: 1.3rem;
+          line-height: 1.8rem;
+          letter-spacing: 0.1rem;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-weight: bold;
+          padding: 1.5rem 3.1rem;
+          border: 0.2rem solid black;
+
+          &:hover {
+            background-color: black;
+            color: $white;
+          }
+        }
       }
     }
   }

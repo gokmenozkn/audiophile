@@ -1,0 +1,77 @@
+@import '../../sass/variables';
+
+.main {
+  margin-bottom: 16rem;
+
+  @media screen and (max-width: $tablet-bp) {
+    padding: 0 2.4rem;
+    margin-bottom: 12rem;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.114286rem;
+  text-align: center;
+  margin-bottom: 6.4rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+
+  @media screen and (max-width: $tablet-bp) {
+    flex-direction: column;
+    row-gap: 5.6rem;
+  }
+}
+
+.card {
+  width: calc(100 / 3) * 1%;
+
+  @media screen and (max-width: $tablet-bp) {
+    width: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 0.8rem;
+    margin-bottom: 4rem;
+
+    @media screen and (max-width: $tablet-bp) {
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  &__body {
+    text-align: center;
+
+    &__title {
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 3.3rem;
+      letter-spacing: 0.171429rem;
+      text-transform: uppercase;
+      margin-bottom: 3.2rem;
+    }
+  }
+}
+
+.btn {
+  background-color: $red;
+  color: white;
+  border: 0;
+  padding: 1.5rem 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $red-hover;
+  }
+}

@@ -1,19 +1,30 @@
+@use 'sass:math';
 @import './../../sass/variables';
 
 .container {
-  max-width: 1120px;
+  max-width: $container-width;
   margin: 0 auto;
   margin-top: 12rem;
   margin-bottom: 16.8rem;
 
+  @media screen and (max-width: $tablet-bp) {
+    padding: 0 24px;
+  }
+
   .row {
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: $tablet-bp) {
+      flex-direction: column;
+      gap: 68px;
+    }
   }
 }
 
 .card {
-  width: 350px;
+  $card-width: math.div(350, 1120);
+  width: 35rem;
   height: 204px;
   position: relative;
   background-color: $gray;
@@ -21,7 +32,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
+
+  @media screen and (max-width: $tablet-bp) {
+    width: 100%;
+  }
 
   &__img {
     position: absolute;
@@ -32,7 +47,8 @@
 
   &__body {
     text-align: center;
-    margin-top: calc(50% - (11.6rem - 1.5rem));
+    // margin-top: calc(50% - (11.6rem - 1.5rem));
+    margin-top: 8.8rem;
   }
 
   &__title {
@@ -49,7 +65,7 @@
     font-weight: bold;
     font-size: 1.3rem;
     line-height: 1.8rem;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
     color: $black;
     text-decoration: none;

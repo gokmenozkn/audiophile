@@ -1,0 +1,56 @@
+@use 'sass:math';
+@import '../../sass/variables';
+
+.container {
+  margin-bottom: 16rem;
+
+  @media screen and (max-width: $tablet-bp) {
+    padding: 0 2.4rem;
+    margin-bottom: 12rem;
+  }
+}
+
+.wrapper {
+  $first-col-width: math.div(445, 1120);
+  $second-col-width: math.div(635, 1120);
+  display: grid;
+  grid-template-columns: percentage($first-col-width) percentage(
+      $second-col-width
+    );
+  grid-auto-rows: minmax(280px, auto);
+  gap: 3.2rem;
+
+  @media screen and (max-width: $tablet-bp) {
+    grid-template-columns: 100%;
+  }
+}
+
+.img {
+  border-radius: 0.8rem;
+}
+
+.one {
+  grid-column: 1 / 2;
+
+  @media screen and (max-width: $tablet-bp) {
+    grid-row: 1 / 2;
+  }
+}
+
+.three {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+
+  @media screen and (max-width: $tablet-bp) {
+    grid-row: 3 / 5;
+    grid-column: 1;
+  }
+}
+
+.two {
+  grid-column: 1 / 2;
+
+  @media screen and (max-width: $tablet-bp) {
+    grid-row: 2 / 3;
+  }
+}

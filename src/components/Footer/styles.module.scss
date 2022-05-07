@@ -9,6 +9,11 @@
   margin: 0 auto;
   padding-top: 7.5rem;
   padding-bottom: 4.8rem;
+
+  @media (max-width: $tablet-bp) {
+    padding-top: 52px;
+    padding-bottom: 38px;
+  }
 }
 
 .nav {
@@ -16,6 +21,11 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 3.6rem;
+
+  @media (max-width: $tablet-bp) {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
 
   &__brand {
     color: $white;
@@ -26,6 +36,12 @@
   &__list {
     display: flex;
     gap: 3.4rem;
+
+    @media (max-width: $tablet-bp) {
+      flex-direction: column;
+      text-align: center;
+      gap: 16px;
+    }
   }
 }
 
@@ -48,8 +64,22 @@
   align-items: flex-end;
   margin-bottom: 5.6rem;
 
+  @media (max-width: $tablet-bp) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 48px;
+    padding: 0 24px;
+    gap: 48px;
+  }
+
   .left {
     width: 54rem;
+
+    @media (max-width: $tablet-bp) {
+      width: 100%;
+    }
 
     p {
       color: $white;
@@ -81,4 +111,8 @@
   font-weight: bold;
   font-size: 1.5rem;
   line-height: 2.5rem;
+
+  @media (max-width: $tablet-bp) {
+    text-align: center;
+  }
 }

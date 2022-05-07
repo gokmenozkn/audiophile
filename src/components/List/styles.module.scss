@@ -1,0 +1,21 @@
+@import '../../sass/variables';
+
+.list {
+  max-width: $container-width;
+  margin: 16rem auto;
+
+  @media (max-width: $tablet-bp) {
+    padding: 0 24px;
+    margin: 6.4rem 0;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16rem;
+
+  @media (max-width: $tablet-bp) {
+    row-gap: 12rem;
+  }
+}

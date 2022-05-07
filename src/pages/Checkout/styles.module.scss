@@ -1,0 +1,338 @@
+@import '../../sass/variables';
+
+.background {
+  position: relative;
+  background-color: #f1f1f1;
+  padding: 7.9rem 0;
+}
+
+.main {
+  max-width: $container-width;
+  margin: 0 auto;
+
+  @media screen and (max-width: $tablet-bp) {
+    padding: 0 2.4rem;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media screen and (max-width: $tablet-bp) {
+    flex-direction: column;
+    row-gap: 3.2rem;
+  }
+
+  .left {
+    width: calc(70% - 3rem);
+    background-color: white;
+    padding: 4.8rem;
+    border-radius: 0.8rem;
+
+    @media screen and (max-width: $tablet-bp) {
+      width: 100%;
+      padding: 2.4rem;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 3.2rem;
+      line-height: 3.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.114286rem;
+      margin-bottom: 4.1rem;
+
+      @media screen and (max-width: $tablet-bp) {
+        font-size: 28px;
+        line-height: 38px;
+        letter-spacing: 1px;
+        margin-bottom: 3.2rem;
+      }
+    }
+  }
+  .right {
+    width: 30%;
+    background-color: white;
+    border-radius: 0.8rem;
+    padding: 3.3rem;
+    align-self: flex-start;
+    position: sticky;
+    top: 3.8rem;
+
+    @media screen and (max-width: $tablet-bp) {
+      width: 100%;
+      padding: 3.2rem 2.4rem;
+    }
+
+    .summaryTitle {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.128571rem;
+      margin-bottom: 3.1rem;
+    }
+  }
+}
+
+.link {
+  display: block;
+  opacity: 0.5;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 3.8rem;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+.group_title {
+  color: $red;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.0928571rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+.group_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 2.4rem;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  width: calc((100% / 2) - 1.6rem);
+
+  @media screen and (max-width: $tablet-bp) {
+    width: 100%;
+  }
+
+  label {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: -0.0214286rem;
+    margin-bottom: 0.9rem;
+  }
+
+  input {
+    border-radius: 0.8rem;
+    background: #ffffff;
+    border: 0.1rem solid #cfcfcf;
+    padding: 1.8rem 2.4rem;
+    outline: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.025px;
+
+    &::placeholder {
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+      letter-spacing: -0.025rem;
+      color: #000000;
+      opacity: 0.4;
+    }
+
+    &:focus {
+      transition: all 0.5s ease-out;
+      border-color: $red;
+    }
+  }
+}
+
+.paymentMethod {
+  margin-bottom: 2.4rem;
+  width: calc((100% / 2) - 1.6rem);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+
+  @media screen and (max-width: $tablet-bp) {
+    width: 100%;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1.6rem;
+    border-radius: 0.8rem;
+    background: #ffffff;
+    border: 0.1rem solid #cfcfcf;
+    padding: 1.8rem 2.4rem;
+    outline: none;
+
+    &:hover {
+      cursor: pointer;
+      border-color: $red;
+    }
+
+    .circle {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      border: 1px solid #cfcfcf;
+      padding: 0.4rem;
+
+      &__active {
+        background-color: $red;
+      }
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+      letter-spacing: -0.025rem;
+    }
+  }
+}
+
+.billingDetails {
+  margin-bottom: 5.3rem;
+}
+
+.shippingInfo {
+  margin-bottom: 5.3rem;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
+  margin-bottom: 3.2rem;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__img {
+    width: 100%;
+    max-width: 6.4rem;
+    margin-right: 1.6rem;
+    border-radius: 0.8rem;
+  }
+
+  &__right {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &__info {
+      .name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 2.5rem;
+      }
+
+      .price {
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 2.5rem;
+        color: black;
+        opacity: 0.5;
+      }
+    }
+
+    &__qty {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 2.5rem;
+      color: black;
+      opacity: 0.5;
+    }
+  }
+}
+
+.chargesList {
+  li {
+    display: flex;
+    justify-content: space-between;
+
+    strong {
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+      text-transform: uppercase;
+    }
+
+    div {
+      font-weight: 500;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+  }
+
+  .vat {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.payButton {
+  margin-top: 3.2rem;
+  width: 100%;
+  padding: 1.5rem 0;
+  border: 0;
+  background-color: $red;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $red-hover;
+  }
+}
+
+.errorMessage {
+  color: #cd2c2c;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 0.9rem;
+}
+
+.redBorder {
+  border-color: $red;
+}
+
+.cashOnDelivery {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+
+  @media screen and (max-width: $tablet-bp) {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  &__info {
+    color: rgba(black, 0.5);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+
+    @media screen and (max-width: $tablet-bp) {
+      text-align: center;
+    }
+  }
+}

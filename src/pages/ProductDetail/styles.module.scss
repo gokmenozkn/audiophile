@@ -1,0 +1,21 @@
+@import '../../sass/variables';
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+
+  .goBack {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    color: black;
+    opacity: 0.5;
+    margin: 7.9rem 0 5.6rem 0;
+
+    @media screen and (max-width: $tablet-bp) {
+      margin-left: 2.4rem;
+    }
+  }
+}

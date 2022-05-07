@@ -20,7 +20,7 @@ const CARD = {
   },
   Earhphones: {
     logo: earphone,
-    url: '/earhphones',
+    url: '/earphones',
     style: {
       width: 17.8 + 'rem',
       height: 16.1 + 'rem',
@@ -30,7 +30,7 @@ const CARD = {
 
 const CARD_NAMES = Object.keys(CARD);
 
-export default function HomeFlexCard() {
+export default function CategoryCard() {
   return (
     <div className={styles.container}>
       <div className={styles.row}>

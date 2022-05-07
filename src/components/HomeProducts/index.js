@@ -1,11 +1,21 @@
-import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
+import { Link } from 'react-router-dom';
+import useWindow from '../../helper/useWindow';
+
+// ZX9
 import zx9 from './../../assets/home/desktop/image-speaker-zx9.png';
-import zx7 from './../../assets/home/desktop/image-speaker-zx7.jpg';
+
+// ZX7
+import zx7Desktop from './../../assets/home/desktop/image-speaker-zx7.jpg';
+import zx7Mobile from './../../assets/home/mobile/image-speaker-zx7.jpg';
+
+// YX1
 import yx1 from './../../assets/home/desktop/image-earphones-yx1.jpg';
-import personImage from './../../assets/shared/desktop/image-best-gear.jpg';
 
 export default function HomeProducts() {
+  let windowWidth = useWindow();
+  let zx7Bg = windowWidth < 768 ? zx7Mobile : zx7Desktop;
+
   return (
     <div className={styles.container}>
       <div className={styles.cards}>
@@ -20,7 +30,7 @@ export default function HomeProducts() {
                 Upgrade to premium speakers that are phenomenally built to
                 deliver truly remarkable sound.
               </p>
-              <Link className={styles.right__btn} to='/zx9'>
+              <Link className={styles.right__btn} to='/speakers/6'>
                 See Product
               </Link>
             </div>
@@ -29,11 +39,11 @@ export default function HomeProducts() {
 
         <div
           className={styles.zx7}
-          style={{ background: `url(${zx7})`, backgroundSize: 'cover' }}
+          style={{ backgroundImage: `url(${zx7Bg})`, backgroundSize: 'cover' }}
         >
           <div className={styles.body}>
             <h1 className={styles.body__title}>ZX7 SPEAKER</h1>
-            <Link className={styles.body__link} to='/zx7'>
+            <Link className={styles.body__link} to='/speakers/5'>
               See Product
             </Link>
           </div>
@@ -46,35 +56,17 @@ export default function HomeProducts() {
               style={{
                 backgroundImage: `url(${yx1})`,
                 backgroundSize: 'cover',
+                backgroundPosition: 'center',
               }}
             ></div>
-            <div className={styles.right}>
-              <h1 className={styles.right__title}>YX1 EARPHONES</h1>
-              <Link className={styles.right__link} to='/yx1'>
-                See Product
-              </Link>
+            <div className={styles.rightContainer}>
+              <div className={styles.right}>
+                <h1 className={styles.right__title}>YX1 EARPHONES</h1>
+                <Link className={styles.right__link} to='/earphones/1'>
+                  See Product
+                </Link>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.group20}>
-        <div className={styles.flex}>
-          <div className={styles.left}>
-            <h1 className={styles.title}>
-              Bringing you the <span className={styles.red}>best</span> audio gear
-            </h1>
-            <p className={styles.content}>
-              Located at the heart of New York City, Audiophile is the premier
-              store for high end headphones, earphones, speakers, and audio
-              accessories. We have a large showroom and luxury demonstration
-              rooms available for you to browse and experience a wide range of
-              our products. Stop by our store to meet some of the fantastic
-              people who make Audiophile the best place to buy your portable
-              audio equipment.
-            </p>
-          </div>
-          <div className={styles.right}>
-            <img src={personImage} alt='personImage' />
           </div>
         </div>
       </div>

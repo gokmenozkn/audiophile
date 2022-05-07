@@ -1,0 +1,141 @@
+@use 'sass:math';
+@import '../../sass/variables';
+
+$width: 1120;
+$content-width: math.div(445, $width);
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56rem;
+
+  @media screen and (max-width: $tablet-bp) {
+    flex-direction: column;
+    height: auto;
+    padding: 0 2.4rem;
+  }
+
+  .content {
+    width: percentage($content-width);
+
+    @media screen and (max-width: $tablet-bp) {
+      width: 100%;
+    }
+
+    &__state {
+      font-weight: normal;
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+      letter-spacing: 1rem;
+      text-transform: uppercase;
+      color: $red;
+      margin-bottom: 1.6rem;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 4rem;
+      line-height: 4.4rem;
+      letter-spacing: 0.142857rem;
+      text-transform: uppercase;
+      margin-bottom: 3.2rem;
+
+      @media screen and (max-width: $tablet-bp) {
+        font-size: 2.4rem;
+        line-height: 3.8rem;
+        letter-spacing: 0.1rem;
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    &__body {
+      font-weight: 500;
+      opacity: 0.5;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      margin-bottom: 3.2rem;
+
+      @media screen and (max-width: $tablet-bp) {
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    &__price {
+      font-weight: bold;
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.128571rem;
+      margin-bottom: 4.7rem;
+
+      @media screen and (max-width: $tablet-bp) {
+        margin-bottom: 3.1rem;
+        letter-spacing: 1.28571px;
+      }
+    }
+
+    &__qty {
+      $qty-width: math.div(296, 445);
+      display: flex;
+      width: percentage($qty-width);
+      justify-content: space-between;
+      height: 4.8rem;
+
+      @media screen and (max-width: $tablet-bp) {
+        width: 100%;
+      }
+
+      &__number {
+        $w: math.div(120, 296);
+        width: percentage($w);
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $gray;
+      }
+
+      &__add {
+        $w: math.div(160, 296);
+        width: percentage($w);
+        background-color: $red;
+        color: $white;
+        border: 0;
+        outline: none;
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        letter-spacing: 0.1rem;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $red-hover;
+        }
+      }
+    }
+  }
+}
+
+.img {
+  width: percentage(math.div(540, $width));
+  border-radius: 0.8rem;
+
+  @media screen and (max-width: $tablet-bp) {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+}
+
+.icon {
+  user-select: none;
+  color: black;
+  opacity: 0.5;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    color: $red;
+  }
+}

@@ -1,24 +1,36 @@
 @import './../../sass/variables';
 
-$container-width: 1120px;
-
-.section {
+.HomeSection {
   background-color: $blackish;
-  background-image: url('./../../assets/home/desktop/image-hero.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left bottom;
-  height: calc(100vh - (4em + 4rem - 0.3rem));
+  height: calc(100vh - 9.7rem);
+
+  @media screen and (max-width: $tablet-bp) {
+    background-position: center;
+    display: flex;
+    align-items: center;
+  }
 
   .container {
     max-width: $container-width;
     margin: 0 auto;
+    transform: translateY(calc(128 / 346) * 100%);
+
+    @media screen and (max-width: $tablet-bp) {
+      transform: none;
+    }
 
     .main {
       position: relative;
       width: 40%;
-      // background-color: purple;
-      transform: translateY(12.8rem);
+
+      @media screen and (max-width: $tablet-bp) {
+        width: 100%;
+        text-align: center;
+        padding: 0 24px;
+      }
 
       &__ad {
         color: $white;
@@ -39,6 +51,12 @@ $container-width: 1120px;
         letter-spacing: 2px;
         text-transform: uppercase;
         margin-bottom: 2.4rem;
+
+        @media screen and (max-width: $tablet-bp) {
+          font-size: 36px;
+          line-height: 40px;
+          letter-spacing: 1.28571px;
+        }
       }
 
       &__content {
@@ -49,6 +67,10 @@ $container-width: 1120px;
         color: #ffffff;
         opacity: 0.75;
         margin-bottom: 4rem;
+
+        @media screen and (max-width: $tablet-bp) {
+          width: 100%;
+        }
       }
 
       &__btn {
@@ -69,5 +91,19 @@ $container-width: 1120px;
         }
       }
     }
+  }
+}
+
+.general {
+  background-color: black;
+  color: $white;
+  text-align: center;
+  padding: 9.8rem 0;
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 4.4rem;
   }
 }

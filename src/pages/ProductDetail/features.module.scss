@@ -1,0 +1,78 @@
+@use 'sass:math';
+@import '../../sass/variables';
+
+$w-container: 1120;
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  margin: 16rem 0;
+
+  @media screen and (max-width: $tablet-bp) {
+    flex-direction: column;
+    margin: 8.8rem 0;
+    padding: 0 2.4rem;
+  }
+
+  .left {
+    $w: math.div(635, $w-container);
+    width: percentage($w);
+
+    @media screen and (max-width: $tablet-bp) {
+      width: 100%;
+      margin-bottom: 8.8rem;
+    }
+  }
+
+  .right {
+    $w: math.div(350, $w-container);
+    width: percentage($w);
+
+    @media screen and (max-width: $tablet-bp) {
+      width: 100%;
+    }
+  }
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: bold;
+  line-height: 3.6rem;
+  letter-spacing: 0.114286rem;
+  text-transform: uppercase;
+  margin-bottom: 3.2rem;
+}
+
+.qty {
+  color: $red;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
+.equipment {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  opacity: 0.5;
+}
+
+.content {
+  opacity: 0.5;
+  color: black;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+  }
+}
