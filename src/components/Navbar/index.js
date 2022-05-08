@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import CartModal from './CartModal';
 import useWindow from '../../helper/useWindow';
 import hamburgerIcon from '../../assets/shared/tablet/icon-hamburger.svg';
+import { useRef } from 'react';
 
 const LINK = {
   Home: {
@@ -27,6 +28,21 @@ const LINK_NAMES = Object.keys(LINK);
 function Mobile(props) {
   let navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let dropdownRef = useRef();
+
+  function handleDropdownClick(e) {
+    if (dropdownRef.current === e.target) {
+      setIsDropdownOpen(false);
+    }
+  }
+
+  useEffect(() => {
+    if (isDropdownOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isDropdownOpen]);
 
   return (
     <>
@@ -53,17 +69,23 @@ function Mobile(props) {
         </nav>
         {isDropdownOpen && (
           <div
-            className={styles.dropdown}
-            style={{ backgroundColor: props.color }}
+            ref={dropdownRef}
+            onClick={handleDropdownClick}
+            className={styles.dropdownBackground}
           >
-            <div className={styles.row}>
-              {LINK_NAMES.map((name) => {
-                return (
-                  <Link key={name} to={LINK[name].target}>
-                    {name}
-                  </Link>
-                );
-              })}
+            <div
+              className={styles.dropdown}
+              style={{ backgroundColor: props.color }}
+            >
+              <div className={styles.row}>
+                {LINK_NAMES.map((name) => {
+                  return (
+                    <Link key={name} to={LINK[name].target}>
+                      {name}
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
           </div>
         )}

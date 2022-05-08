@@ -1,15 +1,18 @@
 /* eslint-disable */
 import styles from './product-section.module.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAppContext } from '../../context/AppContext';
+import { useLocation } from 'react-router-dom';
 
 export default function ProductSection({ item }) {
+  const [qty, setQty] = useState(1);
   const { name, price, image, description } = item;
   const isNew = item.new;
   let { desktop } = image;
   let newDesktopURI = desktop.replace('./', '');
+  let { pathname } = useLocation();
 
-  const [qty, setQty] = useState(1);
+  useEffect(() => setQty(1), [pathname]);
 
   const { addToCart } = useAppContext();
 

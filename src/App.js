@@ -7,8 +7,13 @@ import Earphones from './pages/Earphones';
 import ProductDetail from './pages/ProductDetail';
 import Checkout from './pages/Checkout';
 import ScrollToTop from './helper/ScrollToTop';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    document.title = 'Audiophile';
+  }, []);
+  
   return (
     <Router>
       <ScrollToTop />
