@@ -1,7 +1,7 @@
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import CartModal from './CartModal';
 import useWindow from '../../helper/useWindow';
@@ -25,6 +25,9 @@ const LINK = {
 const LINK_NAMES = Object.keys(LINK);
 
 function Mobile(props) {
+  let navigate = useNavigate();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   return (
     <>
       <div
@@ -32,10 +35,15 @@ function Mobile(props) {
         style={{ backgroundColor: props.color }}
       >
         <nav className={styles.nav}>
-          <div className={styles.nav__hamburger}>
+          <div
+            onClick={() => setIsDropdownOpen((prev) => !prev)}
+            className={styles.nav__hamburger}
+          >
             <img src={hamburgerIcon} alt='' />
           </div>
-          <h1 className={styles.nav__title}>audiophile</h1>
+          <h1 onClick={() => navigate('/')} className={styles.nav__title}>
+            audiophile
+          </h1>
           <div
             className={styles.nav__icon}
             onClick={() => props.setIsModalOpen((prev) => !prev)}
@@ -43,6 +51,22 @@ function Mobile(props) {
             <FontAwesomeIcon icon={faCartShopping} size='2x' />
           </div>
         </nav>
+        {isDropdownOpen && (
+          <div
+            className={styles.dropdown}
+            style={{ backgroundColor: props.color }}
+          >
+            <div className={styles.row}>
+              {LINK_NAMES.map((name) => {
+                return (
+                  <Link key={name} to={LINK[name].target}>
+                    {name}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
       {props.isModalOpen && <CartModal setModal={props.setIsModalOpen} />}
     </>
@@ -50,6 +74,8 @@ function Mobile(props) {
 }
 
 function Desktop(props) {
+  let navigate = useNavigate();
+
   return (
     <>
       <div
@@ -57,7 +83,9 @@ function Desktop(props) {
         style={{ backgroundColor: props.color }}
       >
         <nav className={styles.nav}>
-          <h1 className={styles.nav__title}>audiophile</h1>
+          <h1 onClick={() => navigate('/')} className={styles.nav__title}>
+            audiophile
+          </h1>
           <ul className={styles.nav__list}>
             {LINK_NAMES.map((name) => {
               return (

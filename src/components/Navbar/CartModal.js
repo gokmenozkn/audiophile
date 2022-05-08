@@ -4,7 +4,8 @@ import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import calculateTotal from '../../helper/calculateTotal';
 
-export function CartItem({ item, decreaseByOne, increaseByOne }) {
+export function CartItem({ item }) {
+  const { decreaseByOne, increaseByOne } = useAppContext();
   const image = item.img || {};
   let { desktop } = image;
   let newDesktopURI = desktop.replace('./', '');
@@ -33,7 +34,7 @@ export function CartItem({ item, decreaseByOne, increaseByOne }) {
 }
 
 function CartModal({ setModal }) {
-  const { cart, removeAll, increaseByOne, decreaseByOne } = useAppContext();
+  const { cart, removeAll } = useAppContext();
   const modalRef = useRef();
   const navigate = useNavigate();
 
@@ -57,14 +58,7 @@ function CartModal({ setModal }) {
           <div className={styles.list}>
             {cart.length > 0 &&
               cart.map((item) => {
-                return (
-                  <CartItem
-                    item={item}
-                    key={item.id}
-                    increaseByOne={increaseByOne}
-                    decreaseByOne={decreaseByOne}
-                  />
-                );
+                return <CartItem item={item} key={item.id} />;
               })}
           </div>
 

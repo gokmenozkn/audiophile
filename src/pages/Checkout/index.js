@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 import Layout from '../../components/Layout';
-import xx99 from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
 import deliveryIcon from '../../assets/shared/desktop/icon-delivery.svg';
 import CheckoutModal from '../../components/CheckoutModal';
 import {
